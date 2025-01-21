@@ -18,6 +18,7 @@
   group: Gttllbin0
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin0}'
   order: 9
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin1.root':
   type: mc
@@ -26,6 +27,7 @@
   group: Gttllbin1
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin1}'
   order: 10
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin2.root':
   type: mc
@@ -34,6 +36,7 @@
   group: Gttllbin2
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin2}'
   order: 11
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin3.root':
   type: mc
@@ -42,6 +45,7 @@
   group: Gttllbin3
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin3}'
   order: 12
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin4.root':
   type: mc
@@ -50,6 +54,7 @@
   group: Gttllbin4
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin4}'
   order: 13
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin5.root':
   type: mc
@@ -58,6 +63,7 @@
   group: Gttllbin5
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin5}'
   order: 14
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin6.root':
   type: mc
@@ -66,6 +72,7 @@
   group: Gttllbin6
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin6}'
   order: 15
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin7.root':
   type: mc
@@ -74,6 +81,7 @@
   group: Gttllbin7
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin7}'
   order: 16
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin8.root':
   type: mc
@@ -82,6 +90,7 @@
   group: Gttllbin8
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin8}'
   order: 17
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin9.root':
   type: mc
@@ -90,6 +99,7 @@
   group: Gttllbin9
   yields-group: '1t#bar{t}+tW\textrm{ (bb4l) Bin9}'
   order: 18
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin10.root':
   type: mc
@@ -98,6 +108,7 @@
   group: Gttllbin10
   yields-group: '2t#bar{t}+tW\textrm{ (bb4l) Bin10}'
   order: 19
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin11.root':
   type: mc
@@ -106,6 +117,7 @@
   group: Gttllbin11
   yields-group: '2t#bar{t}+tW\textrm{ (bb4l) Bin11}'
   order: 20
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin12.root':
   type: mc
@@ -114,6 +126,7 @@
   group: Gttllbin12
   yields-group: '2t#bar{t}+tW\textrm{ (bb4l) Bin12}'
   order: 21
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin13.root':
   type: mc
@@ -122,6 +135,7 @@
   group: Gttllbin13
   yields-group: '2t#bar{t}+tW\textrm{ (bb4l) Bin13}'
   order: 22
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin14.root':
   type: mc
@@ -130,6 +144,7 @@
   group: Gttllbin14
   yields-group: '2t#bar{t}+tW\textrm{ (bb4l) Bin14}'
   order: 23
+  #scale: 0.92234303
 
 'ttbartwbb4linclusive_Bin15.root':
   type: mc
@@ -138,6 +153,7 @@
   group: Gttllbin15
   yields-group: '2t#bar{t}+tW\textrm{ (bb4l) Bin15}'
   order: 24
+  #scale: 0.92234303
 
 #'ttbarbgFromDilepton.root':
 #  type: mc
@@ -163,13 +179,13 @@
   yields-group: '2t#bar{t}\;(\textrm{not dileptonic})'
   order: 5
 
-'singletw.root':
-  type: mc
-  cross-section: 1.0
-  generated-events: 1.0
-  group: Gst
-  yields-group: '3Single top'
-  order: 4
+#'singletw.root':
+#  type: mc
+#  cross-section: 1.0
+#  generated-events: 1.0
+#  group: Gst
+#  yields-group: '3Single top'
+#  order: 4
 
 'singletop.root':
   type: mc

@@ -89,7 +89,7 @@ Gttllbin14:
 Gttllbin15:
   fill-color: '#3399ff'
   #legend: 't#bar{t}+tW Bin15'
-  legend: 'bb4l Bin10'
+  legend: 'bb4l Bin15'
 
 Gttbkg:
   fill-color: '#666699'

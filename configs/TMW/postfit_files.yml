@@ -104,55 +104,55 @@
   cross-section: 1.0
   generated-events: 1.0
   group: Gttllbin10
-  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin10}'
+  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin10}'
   order: 19
 
-'ttbartwbb4linclusive_Bin11.root':
-  type: mc
-  cross-section: 1.0
-  generated-events: 1.0
-  group: Gttllbin11
-  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin11}'
-  order: 20
-
-'ttbartwbb4linclusive_Bin12.root':
-  type: mc
-  cross-section: 1.0
-  generated-events: 1.0
-  group: Gttllbin12
-  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin12}'
-  order: 21
-
-'ttbartwbb4linclusive_Bin13.root':
-  type: mc
-  cross-section: 1.0
-  generated-events: 1.0
-  group: Gttllbin13
-  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin13}'
-  order: 22
-
-'ttbartwbb4linclusive_Bin14.root':
-  type: mc
-  cross-section: 1.0
-  generated-events: 1.0
-  group: Gttllbin14
-  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin14}'
-  order: 23
-
-'ttbartwbb4linclusive_Bin15.root':
-  type: mc
-  cross-section: 1.0
-  generated-events: 1.0
-  group: Gttllbin15
-  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin15}'
-  order: 24
+#'ttbartwbb4linclusive_Bin11.root':
+#  type: mc
+#  cross-section: 1.0
+#  generated-events: 1.0
+#  group: Gttllbin11
+#  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin11}'
+#  order: 20
+#
+#'ttbartwbb4linclusive_Bin12.root':
+#  type: mc
+#  cross-section: 1.0
+#  generated-events: 1.0
+#  group: Gttllbin12
+#  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin12}'
+#  order: 21
+#
+#'ttbartwbb4linclusive_Bin13.root':
+#  type: mc
+#  cross-section: 1.0
+#  generated-events: 1.0
+#  group: Gttllbin13
+#  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin13}'
+#  order: 22
+#
+#'ttbartwbb4linclusive_Bin14.root':
+#  type: mc
+#  cross-section: 1.0
+#  generated-events: 1.0
+#  group: Gttllbin14
+#  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin14}'
+#  order: 23
+#
+#'ttbartwbb4linclusive_Bin15.root':
+#  type: mc
+#  cross-section: 1.0
+#  generated-events: 1.0
+#  group: Gttllbin15
+#  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin15}'
+#  order: 24
 
 'ttbarbg.root':
   type: mc
   cross-section: 1.0
   generated-events: 1.0
   group: Gttbkg
-  yields-group: '2t#bar{t} (not dileptonic)'
+  yields-group: '3t#bar{t} (not dileptonic)'
   order: 7
 
 'dy.root':
