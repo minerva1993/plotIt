@@ -782,6 +782,9 @@ namespace plotIt {
       if (node["rebin"])
         plot.rebin = node["rebin"].as<uint16_t>();
 
+      if (node["rebin-arr"])
+        plot.rebin_arr = node["rebin-arr"].as<std::vector<double>>();
+
       if (node["labels"]) {
         YAML::Node labels = node["labels"];
         plot.labels = parseLabelsNode(labels);
@@ -2210,6 +2213,20 @@ namespace plotIt {
 
       if (obj) {
         std::shared_ptr<TObject> cloned_obj(obj->Clone());
+
+        // Rebin by array
+        if (std::static_pointer_cast<TH1>(cloned_obj) && std::size(plot.rebin_arr) > 0) {
+            auto h = std::static_pointer_cast<TH1>(cloned_obj).get();
+            auto size_arr = std::size(plot.rebin_arr);
+            double xbins[size_arr];
+            for (size_t i=0; i<size_arr; i++) {
+                xbins[i] = plot.rebin_arr.at(i);
+            }
+            auto hnew = h->Rebin(int(size_arr)-1, plot_name.c_str(), xbins);
+            cloned_obj.reset(hnew);
+        }
+
+
         TemporaryPool::get().addRuntime(cloned_obj);
 
         file.objects.emplace(plot.uid, cloned_obj.get());

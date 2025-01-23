@@ -232,6 +232,21 @@ namespace plotIt {
                 else object = f->Get(plot.name.c_str());
 
                 if (object) {
+
+                    // Rebin by array
+                    std::shared_ptr<TObject> cloned_obj(object->Clone());
+                    if (std::size(plot.rebin_arr) > 0) {
+                        auto h = std::static_pointer_cast<TH1>(cloned_obj).get();
+                        auto size_arr = std::size(plot.rebin_arr);
+                        double xbins[size_arr];
+                        for (size_t i=0; i<size_arr; i++) {
+                            xbins[i] = plot.rebin_arr.at(i);
+                        }
+                        auto hnew = h->Rebin(int(size_arr)-1, plot.name.c_str(), xbins);
+                        cloned_obj.reset(hnew);
+                        object = cloned_obj.get();
+                    }
+
                     links[variation]->reset(object->Clone());
                 }
             }

@@ -340,6 +340,7 @@ namespace plotIt {
     std::string inherits_from = "TH1";
 
     uint16_t rebin = 1;
+    std::vector<double> rebin_arr;
     std::string scale_option = "";
 
     std::vector<Label> labels;
