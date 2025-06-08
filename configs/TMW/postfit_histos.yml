@@ -1,4 +1,5 @@
-'GOneJ_TwoB_postfit':
+#'GOneJ_TwoB_postfit':
+'TwoJ_TwoB_postfit':
   y-axis: "Events"
   #y-axis-format: "%1% / %2$.2f"
   y-axis-format: "%1% / bin"
@@ -16,7 +17,8 @@
     - {text: 'Postfit', position: [0.2, 0.80], size: 17, font: 44}
     - {text: 'ee+e#mu+#mu#mu', position: [0.2, 0.77], size: 17, font: 44}
 
-'GOneJ_TwoB_prefit':
+#'GOneJ_TwoB_prefit':
+'TwoJ_TwoB_prefit':
   y-axis: "Events"
   #y-axis-format: "%1% / %2$.2f"
   y-axis-format: "%1% / bin"
@@ -25,7 +27,8 @@
   yields-table-order: 2
   yields-title: '$Pre-fit$'
   x-axis: 'm_{lb}^{minimax} (GeV)'
-  ratio-y-axis-range: [0.945, 1.055]
+  #ratio-y-axis-range: [0.945, 1.055]
+  ratio-y-axis-range: [0.8, 1.2]
   ratio-y-axis-auto-range: true
   post-fit: true
   log-y: true

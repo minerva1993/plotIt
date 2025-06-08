@@ -3,6 +3,8 @@ from collections import OrderedDict
 
 channelNames = {'ee': 'ee', 'emu': 'e#mu', 'mumu': '#mu#mu',
                 'sameflavor': 'ee+#mu#mu', 'combined': 'ee+e#mu+#mu#mu'}
+#channelNames = {'emu': 'e#mu'}
+
 histNames = [
             #'NEvents',
             #'bJet1Pt',
@@ -24,10 +26,10 @@ histNames = [
 allowed_dict = {
                  'mlb_minimax': [[], ['TwoBTag'], ['TwoJet', 'GreaterOneJet']],
                  'mlb_min': [[], [], ['TwoJet', 'GreaterOneJet']],
-                 'mbb': [[], ['TwoBTag'], ['GreaterOneJet']],
-                 'nVtx': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['InclusiveNJet', 'GreaterOneJet']],
-                 'rho': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['InclusiveNJet', 'GreaterOneJet']],
-                 'nJets': [['combined'], [], ['InclusiveNJet', 'GreaterOneJet']],
+                 'mbb': [[], ['TwoBTag'], ['TwoJet', 'GreaterOneJet']],
+                 'nVtx': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'rho': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'nJets': [['combined'], [], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
                  'nBJets': [['combined'], ['InclusiveBTag', 'GreaterOneBTag'], []],
                  'jet1Pt': [['combined'], [],['GreaterOneJet', 'TwoJet']],
                  'jet1Eta': [['combined'], [],['GreaterOneJet', 'TwoJet']],
@@ -39,7 +41,7 @@ btagNames = {#'ZeroBTag': '= 0',
              'InclusiveBTag': '#geq 0',
              #'GreaterOneBTag': '#geq 2',
              'TwoBTag': '= 2'}
-njetNames = {#'TwoJet': '= 2',
+njetNames = {'TwoJet': '= 2',
              'InclusiveNJet': '#geq 0',
              'GreaterOneJet': '#geq 2'}
 
@@ -81,6 +83,8 @@ for hname in histNames:
                     options_list.append('  y-axis-format: "%1% / %2$.2f"\n')
                 if ch == 'combined':
                     options_list.append("  rename:\n    - {from: '" + hout + "', to: '" + hout.replace(ch, 'll') + "'}\n")
+                if 'mlb_minimax' in hname:
+                    options_list.append('  rebin-arr: [0.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]\n')
 
                 options_list.append("  labels:\n    - {text: '" + ch_label + "', position: [0.77, .725], font: 44, size: 14}\n")
                 options_list.append("    - {text: '#splitline{N_{b jet} " + btag_label + "}{N_{jet} " + njet_label + "}', position: [0.77, .65], font: 44, size: 14}\n")
@@ -89,7 +93,7 @@ for hname in histNames:
                 options_list.append("  save-extensions: ['pdf', 'png']\n\n")
                 hist_items[hout] = options_list
 
-with open('histos_control.yml', 'w') as f:
+with open('histos_control_TwoTwo.yml', 'w') as f:
 #with open('histos_control_bb4l.yml', 'w') as f:
     for histo, options in hist_items.items():
         f.write("'" + histo + "':\n")

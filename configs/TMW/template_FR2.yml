@@ -16,10 +16,11 @@ configuration:
   ratio-fit-error-fill-color: "#aa556270"
   ratio-fit-line-color: "#0B486B"
   blinded-range-fill-color: "#29556270"
-  blinded-range-fill-style: 1001
+  blinded-range-fill-style: 0
   yields-table-align: v
   book-keeping-file: 'plots.root'
   yields-table-numerical-precision-yields: 2
+  #syst-only: true
 
 files: 
   include: ['files_FR2.yml']

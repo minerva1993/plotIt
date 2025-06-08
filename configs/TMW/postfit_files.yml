@@ -15,7 +15,7 @@
   type: mc
   cross-section: 1.0
   generated-events: 1.0
-  group: Gttll
+  group: Gttllincl
   yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l})'
   order: 9
 
@@ -107,13 +107,13 @@
   yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin10}'
   order: 19
 
-#'ttbartwbb4linclusive_Bin11.root':
-#  type: mc
-#  cross-section: 1.0
-#  generated-events: 1.0
-#  group: Gttllbin11
-#  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin11}'
-#  order: 20
+'ttbartwbb4linclusive_Bin11.root':
+  type: mc
+  cross-section: 1.0
+  generated-events: 1.0
+  group: Gttllbin11
+  yields-group: '2t#bar{t}+tW(\ell\ell\textrm{ bb4l}) #textrm{Bin11}'
+  order: 20
 #
 #'ttbartwbb4linclusive_Bin12.root':
 #  type: mc

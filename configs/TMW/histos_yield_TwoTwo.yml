@@ -1,0 +1,76 @@
+'combined_TwoBTag_TwoJet_mlb_minimax_yield':
+  y-axis: "Events"
+  y-axis-format: "%1% / Bin"
+  sort-by-yields: true
+  rename:
+    - {from: 'combined_TwoBTag_TwoJet_mlb_minimax_yield', to: 'll_TwoBTag_TwoJet_mlb_minimax_yield'}
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$\ell\ell$, $\textrm{N}_{\textrm{b-jet}} = 2$, $\textrm{N}_{\textrm{jet}} = 2$'
+
+'ee_TwoBTag_TwoJet_mlb_minimax_yield':
+  y-axis: "Events"
+  y-axis-format: "%1% / Bin"
+  sort-by-yields: true
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$ee$, $\textrm{N}_{\textrm{b-jet}} = 2$, $\textrm{N}_{\textrm{jet}} = 2$'
+
+'emu_TwoBTag_TwoJet_mlb_minimax_yield':
+  y-axis: "Events"
+  y-axis-format: "%1% / Bin"
+  sort-by-yields: true
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$e\mu$, $\textrm{N}_{\textrm{b-jet}} = 2$, $\textrm{N}_{\textrm{jet}} = 2$'
+
+'mumu_TwoBTag_TwoJet_mlb_minimax_yield':
+  y-axis: "Events"
+  y-axis-format: "%1% / Bin"
+  sort-by-yields: true
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$\mu\mu$, $\textrm{N}_{\textrm{b-jet}} = 2$, $\textrm{N}_{\textrm{jet}} = 2$'
+
+#'combined_TwoBTag_TwoJet_mlb_minimax':
+#  log-y: true
+#  sort-by-yields: true
+#  y-axis-format: "%1% / Bin"
+#  rename:
+#    - {from: 'combined_TwoBTag_GreaterOneJet_mlb_minimax', to: 'll_TwoBTag_GreaterOneJet_mlb_minimax'}
+#  labels:
+#    - {text: 'ee+e#mu+#mu#mu', position: [0.77, .725], font: 44, size: 14}
+#    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+#  save-extensions: ['pdf', 'png']
+#
+#'ee_TwoBTag_TwoJet_mlb_minimax':
+#  log-y: true
+#  sort-by-yields: true
+#  y-axis-format: "%1% / Bin"
+#  labels:
+#    - {text: 'ee', position: [0.77, .725], font: 44, size: 14}
+#    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+#  save-extensions: ['pdf', 'png']
+#
+#'emu_TwoBTag_TwoJet_mlb_minimax':
+#  log-y: true
+#  sort-by-yields: true
+#  y-axis-format: "%1% / Bin"
+#  labels:
+#    - {text: 'e#mu', position: [0.77, .725], font: 44, size: 14}
+#    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+#  save-extensions: ['pdf', 'png']
+#
+#'mumu_TwoBTag_TwoJet_mlb_minimax':
+#  log-y: true
+#  sort-by-yields: true
+#  y-axis-format: "%1% / Bin"
+#  labels:
+#    - {text: '#mu#mu', position: [0.77, .725], font: 44, size: 14}
+#    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+#  save-extensions: ['pdf', 'png']
+

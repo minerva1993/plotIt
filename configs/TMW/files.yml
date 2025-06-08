@@ -305,7 +305,9 @@
   cross-section: 1.0
   generated-events: 1.0
   group: Gother
+  #group: Gst
   yields-group: '5Other'
+  #yields-group: '3Single top'
   order: 4
 
 'dy.root':

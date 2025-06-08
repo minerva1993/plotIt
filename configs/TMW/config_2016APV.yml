@@ -32,8 +32,8 @@ systematics:
   - norm_tt: {type: const, value: 1.042, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   - norm_ttbarX: {type: const, value: 1.3, on: 'ttbarX'}
   - norm_wjets: {type: const, value: 1.3, on: 'wjets'}
-  - BFRAG: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
-  - BFRAG_CENTRAL: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
+  #- BFRAG: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
+  #- BFRAG_CENTRAL: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
   #- BSEMILEP: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
   - BTAG_JES
   - BTAG_LJET_CORR
@@ -75,7 +75,7 @@ systematics:
   - L1PREFIRING_ECAL
   - L1PREFIRING_MUON
   #- MATCH: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
-  - MESCALE: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  #- MESCALE: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   - MEFACSCALE: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   #- MEFACSCALE_ST: {type: shape, on: 'singletw'}
   - MEFACSCALE_Z: {type: shape, on: 'dy'}
@@ -83,6 +83,7 @@ systematics:
   #- MERENSCALE_ST: {type: shape, on: 'singletw'}
   - MERENSCALE_Z: {type: shape, on: 'dy'}
   - ML_HDAMP: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - ML_BFRAG: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   - MUON_ID_STAT2016APV
   - MUON_ID_SYST
   - MUON_ISO_STAT2016APV
@@ -98,7 +99,7 @@ systematics:
   #- PSSCALE_WEIGHT_ST_14: {type: shape, on: 'singletw'}
   #- PSSCALE_WEIGHT_ST_3: {type: shape, on: 'singletw'}
   - PU
-  #- TOP_PT: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - TOP_PT: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   - TRIG_EE2016APV_STAT
   - TRIG_EE2016APV_SYS
   - TRIG_EMU2016APV_STAT
@@ -113,7 +114,8 @@ systematics:
   #- WIDTH_30: {type: siglike, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
 
 plots:
-  include: ['histos_control.yml', 'histos_yield.yml']
+  #include: ['histos_control.yml', 'histos_yield.yml']
+  include: ['histos_control_TwoTwo.yml', 'histos_yield_TwoTwo.yml']
   #include: ['histos_blind.yml']
 
 legend:
