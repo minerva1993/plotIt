@@ -314,7 +314,7 @@ namespace plotIt {
 
                   // Normal case, double-sided
                   if (temp_syst_error_up * temp_syst_error_dn <= 0) {
-                      if (temp_syst_error_up >= 0 and temp_syst_error_dn < 0) {
+                      if (temp_syst_error_up > 0 and temp_syst_error_dn <= 0) {
                           syst_error_up = temp_syst_error_up;
                           syst_error_dn = temp_syst_error_dn;
                       } else {

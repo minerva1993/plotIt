@@ -46,6 +46,9 @@ systematics:
   - ELE_RECO
   - ELE_SCALE
   - ELE_SMEAR
+  - ERDON: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - ERDONRETUNE: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - GLUONMOVETUNE: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   - JEREta02018
   - JEREta12018
   - JESAbsoluteMPFBias
@@ -106,7 +109,7 @@ systematics:
   - TRIG_EMU2018_SYS
   - TRIG_MUMU2018_STAT
   - TRIG_MUMU2018_SYS
-  #- UETUNE: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
+  - UETUNE: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
   - UNCLUSTERED2018
   #- MASS: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   #- MASS: {type: siglike, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
