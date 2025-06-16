@@ -1248,7 +1248,7 @@ namespace plotIt {
             has_syst = true;
           }
 
-          if (mc_stack.syst_only_asym->GetErrorYhigh(i-1) != 0 or mc_stack.syst_only_asym->GetErrorYhigh(i-1) != 0) {
+          if (mc_stack.syst_only_asym->GetErrorYhigh(i-1) != 0 or mc_stack.syst_only_asym->GetErrorYlow(i-1) != 0) {
             if (config.syst_only or plot.post_fit) {
               yerrup[i-1] = mc_stack.syst_only_asym->GetErrorYhigh(i-1) / mc_stack.syst_only->GetBinContent(i);
               yerrdn[i-1] = mc_stack.syst_only_asym->GetErrorYlow(i-1) / mc_stack.syst_only->GetBinContent(i);
