@@ -7,7 +7,7 @@ configuration:
   extra-label: "  Preliminary"
   root: ''
   luminosity: 1
-  luminosity-error: 0.025
+  luminosity-error: 0.0084
   error-fill-style: 3154
   error-fill-color: "#ee556270"
   staterror-fill-style: 3145
@@ -40,7 +40,21 @@ systematics:
   - BTAG_LJET_UNCORR2018
   - BTAG_PILEUP
   - BTAG_STATISTIC2018
-  - BTAG_TYPE3
+  #- BTAG_TYPE3
+  - BTAG_TYPE3_BFRAGMENTATION
+  - BTAG_TYPE3_BTEMPCORR
+  - BTAG_TYPE3_CB
+  - BTAG_TYPE3_CFRAGMENTATION
+  - BTAG_TYPE3_CJETS
+  - BTAG_TYPE3_DMUX
+  - BTAG_TYPE3_GLUONSPLITTING
+  - BTAG_TYPE3_JETAWAY
+  - BTAG_TYPE3_KSL
+  - BTAG_TYPE3_L2C
+  - BTAG_TYPE3_LTOTHERS
+  - BTAG_TYPE3_MUDR
+  - BTAG_TYPE3_MUPT
+  - BTAG_TYPE3_PTREL
   #- DS: {type: shape, on: 'singletw'}
   - ELE_ID
   - ELE_RECO
@@ -97,12 +111,28 @@ systematics:
   - MUON_SCALE_STAT2018
   - MUON_SCALE_ZPT
   - PDF_ALPHAS: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
-  - PSSCALE_WEIGHT_14: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
-  - PSSCALE_WEIGHT_3: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  #- PSSCALE_WEIGHT_14: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  #- PSSCALE_WEIGHT_3: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_5: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_6: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_7: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_8: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_9: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_10: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_11: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_12: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_16: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_17: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_18: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_19: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_20: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_21: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_22: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - PSSCALE_WEIGHT_23: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   #- PSSCALE_WEIGHT_ST_14: {type: shape, on: 'singletw'}
   #- PSSCALE_WEIGHT_ST_3: {type: shape, on: 'singletw'}
   - PU
-  - TOP_PT: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  #- TOP_PT: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   - TRIG_EE2018_STAT
   - TRIG_EE2018_SYS
   - TRIG_EMU2018_STAT

@@ -26,7 +26,8 @@ files:
   include: ['postfit_files.yml']
 
 systematics:
-  - total: {type: shape, on: 'ttbartwbb4linclusive_Bin0'}
+  - total: {type: shape, on: 'ttbartwbb4linclusive'}
+  #- total: {type: shape, on: 'ttbartwbb4linclusive_Bin0'}
 
 plots:
   include: ['postfit_histos.yml']

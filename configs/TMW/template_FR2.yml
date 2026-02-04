@@ -7,7 +7,7 @@ configuration:
   extra-label: "Preliminary"
   root: '#'
   luminosity: 1
-  luminosity-error: 0.016
+  luminosity-error: 0.0073
   error-fill-style: 3154
   error-fill-color: "#ee556270"
   staterror-fill-style: 3145
