@@ -1,0 +1,39 @@
+configuration:
+  width: 450
+  height: 450
+  luminosity-label: '138 fb^{-1} (13 TeV)'
+  experiment: " CMS"
+  experiment-label-paper: true
+  extra-label: "Preliminary"
+  root: '#'
+  luminosity: 1
+  luminosity-error: 0.0
+  error-fill-style: 3154
+  error-fill-color: "#ee556270"
+  staterror-fill-style: 3145
+  staterror-fill-color: 7
+  ratio-fit-error-fill-style: 1001
+  ratio-fit-error-fill-color: "#aa556270"
+  ratio-fit-line-color: "#0B486B"
+  blinded-range-fill-color: "#29556270"
+  blinded-range-fill-style: 0
+  yields-table-align: v
+  book-keeping-file: 'plots.root'
+  yields-table-numerical-precision-yields: 2
+  syst-only: true
+
+files: 
+  include: ['files_FR2.yml']
+
+legend:
+  position: [0.35, 0.70, 0.94, 0.88]
+  columns: 4
+
+groups:
+  include: ['groups.yml']
+systematics:
+  - ML_HDAMP: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+  - ML_BFRAG: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
+
+plots:
+  include: ['histos_control_TwoTwo_bfrag.yml']

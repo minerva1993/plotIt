@@ -57,6 +57,7 @@ systematics:
   - BTAG_TYPE3_PTREL
   #- DS: {type: shape, on: 'singletw'}
   - ELE_ID
+  - ELE_ID_EXTRA: {type: const, value: 1.01}
   - ELE_RECO
   - ELE_SCALE
   - ELE_SMEAR
@@ -105,6 +106,7 @@ systematics:
   - MUON_ID_SYST
   - MUON_ISO_STAT2018
   - MUON_ISO_SYST
+  - MUON_ISO_SYST_EXTRA: {type: const, value: 1.005}
   - MUON_SCALE_DELTAM
   - MUON_SCALE_EWK2
   - MUON_SCALE_EWK
