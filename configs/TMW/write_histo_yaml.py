@@ -39,7 +39,7 @@ allowed_dict = {
                }
 btagNames = {#'ZeroBTag': '= 0',
              'InclusiveBTag': '#geq 0',
-             #'GreaterOneBTag': '#geq 2',
+             #'GreaterZeroBTag': '#geq 1',
              'TwoBTag': '= 2'}
 njetNames = {'TwoJet': '= 2',
              'InclusiveNJet': '#geq 0',
@@ -84,7 +84,8 @@ for hname in histNames:
                 if ch == 'combined':
                     options_list.append("  rename:\n    - {from: '" + hout + "', to: '" + hout.replace(ch, 'll') + "'}\n")
                 if 'mlb_minimax' in hname:
-                    options_list.append('  rebin-arr: [0.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]\n')
+                    #options_list.append('  rebin-arr: [0.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]\n')
+                    options_list.append('  #draw-siglike-unc: true\n')
 
                 options_list.append("  labels:\n    - {text: '" + ch_label + "', position: [0.77, .725], font: 44, size: 14}\n")
                 options_list.append("    - {text: '#splitline{N_{b jet} " + btag_label + "}{N_{jet} " + njet_label + "}', position: [0.77, .65], font: 44, size: 14}\n")

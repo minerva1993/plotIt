@@ -1,7 +1,7 @@
 configuration:
   width: 450
   height: 450
-  luminosity-label: '59.8 fb^{-1} (13 TeV)'
+  luminosity-label: '59.6 fb^{-1} (13 TeV)'
   experiment: " CMS"
   experiment-label-paper: true
   extra-label: "  Preliminary"
@@ -152,6 +152,7 @@ plots:
   #include: ['histos_control.yml', 'histos_yield.yml']
   include: ['histos_control_TwoTwo.yml', 'histos_yield_TwoTwo.yml']
   #include: ['histos_blind.yml']
+  #include: ['histos_blind_siglike.yml']
 
 legend:
   #position: [0.35, 0.74, 0.94, 0.88]
