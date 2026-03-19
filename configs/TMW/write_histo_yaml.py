@@ -18,15 +18,19 @@ histNames = [
             'lept1Eta','lept2Eta',
             'jet1Pt','jet1Eta',
             'jet2Pt','jet2Eta',
-            'mbb',
+            'mbb', 'mbb_min', 'drbb_min',
             'mlb_minimax',
+            'mlb_minimax_lightjets'
             ]
 
 #Not drawing all histos! {hname: [[btag], [njet]]}
 allowed_dict = {
                  'mlb_minimax': [[], ['TwoBTag'], ['TwoJet', 'GreaterOneJet']],
+                 'mlb_minimax_lightjets': [[], ['ZeroBTag', 'ZeroOrOneBTag'], ['TwoJet']],
                  'mlb_min': [[], [], ['TwoJet', 'GreaterOneJet']],
                  'mbb': [[], ['TwoBTag'], ['TwoJet', 'GreaterOneJet']],
+                 'mbb_min': [[], ['GreaterTwoBTag'], ['GreaterOneJet']],
+                 'drbb_min': [[], ['GreaterTwoBTag'], ['GreaterOneJet']],
                  'nVtx': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
                  'rho': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
                  'nJets': [['combined'], [], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
@@ -37,9 +41,11 @@ allowed_dict = {
                  'jet2Eta': [['combined'], [],['GreaterOneJet', 'TwoJet']],
                  'bJet1Pt': [['combined'], ['GreaterOneBTag', 'TwoBTag'],[]],
                }
-btagNames = {#'ZeroBTag': '= 0',
+btagNames = {'ZeroBTag': '= 0',
              'InclusiveBTag': '#geq 0',
+             'ZeroOrOneBTag': '= 0 or 1',
              #'GreaterZeroBTag': '#geq 1',
+             'GreaterTwoBTag': '#geq 3',
              'TwoBTag': '= 2'}
 njetNames = {'TwoJet': '= 2',
              'InclusiveNJet': '#geq 0',
@@ -47,8 +53,8 @@ njetNames = {'TwoJet': '= 2',
 
 #Draw stat. unc. overlayed in the ratio pad
 stat_hists = ['mlb_minimax']
-log_hists = ['mlb_minimax', 'mlb_min', 'RHO']
-non_equ_binning = ['mlb_minimax', 'nBJets', 'nJets']
+log_hists = ['mlb_minimax', 'mlb_minimax_lightjets', 'mlb_min', 'RHO']
+non_equ_binning = ['mlb_minimax', 'mlb_minimax_lightjets', 'nBJets', 'nJets']
 no_unit_bin = ['RHO', 'lept1Eta', 'lept2Eta', 'jet2Eta', 'jet2Eta']
 sort_hists = []
 
@@ -60,6 +66,7 @@ for hname in histNames:
             for ch, ch_label in channelNames.items():
 
                 if 'Inclusive' in njet and 'Inclusive' not in btag: continue
+                if 'GreaterOneJet' not in njet and 'GreaterTwoBTag' in btag: continue
 
                 if hname in allowed_dict:
                     if (len(allowed_dict[hname][0]) > 0 and ch not in allowed_dict[hname][0])\
