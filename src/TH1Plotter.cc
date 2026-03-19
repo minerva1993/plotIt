@@ -393,6 +393,8 @@ namespace plotIt {
       //////////// siglike systs
       std::map<std::string, std::vector<float>> combined_systematics_siglike_map_up;
       std::map<std::string, std::vector<float>> combined_systematics_siglike_map_dn;
+      std::map<std::string, std::vector<float>> combined_systematics_siglike_stat_map_up;
+      std::map<std::string, std::vector<float>> combined_systematics_siglike_stat_map_dn;
 
       for ( auto& file: m_plotIt.getFiles([this,index] ( const File& f ) {
             return ( f.type != DATA ) && ( ! f.systematics_siglike->empty() )
@@ -403,8 +405,12 @@ namespace plotIt {
 
               std::vector<float>* combined_systematics_up;
               std::vector<float>* combined_systematics_dn;
+              std::vector<float>* combined_systematics_stat_up;
+              std::vector<float>* combined_systematics_stat_dn;
               auto map_it_up = combined_systematics_siglike_map_up.find(syst.name());
               auto map_it_dn = combined_systematics_siglike_map_dn.find(syst.name());
+              auto map_stat_it_up = combined_systematics_siglike_stat_map_up.find(syst.name());
+              auto map_stat_it_dn = combined_systematics_siglike_stat_map_dn.find(syst.name());
 
               if (map_it_up == combined_systematics_siglike_map_up.end()) {
                   combined_systematics_up = &combined_systematics_siglike_map_up[syst.name()];
@@ -417,6 +423,18 @@ namespace plotIt {
                   combined_systematics_dn->resize(stack.syst_only->GetNbinsX(), 0.);
               } else {
                   combined_systematics_dn = &map_it_dn->second;
+              }
+              if (map_stat_it_up == combined_systematics_siglike_stat_map_up.end()) {
+                  combined_systematics_stat_up = &combined_systematics_siglike_stat_map_up[syst.name()];
+                  combined_systematics_stat_up->resize(stack.syst_only->GetNbinsX(), 0.);
+              } else {
+                  combined_systematics_stat_up = &map_stat_it_up->second;
+              }
+              if (map_stat_it_dn == combined_systematics_siglike_stat_map_dn.end()) {
+                  combined_systematics_stat_dn = &combined_systematics_siglike_stat_map_dn[syst.name()];
+                  combined_systematics_stat_dn->resize(stack.syst_only->GetNbinsX(), 0.);
+              } else {
+                  combined_systematics_stat_dn = &map_stat_it_dn->second;
               }
 
               TH1* nominal_shape = static_cast<TH1*>(syst.nominal_shape.get());
@@ -431,6 +449,8 @@ namespace plotIt {
 
                   float syst_error_up = up_shape->GetBinContent(i) - nominal_shape->GetBinContent(i);
                   float syst_error_dn = down_shape->GetBinContent(i) - nominal_shape->GetBinContent(i);
+                  float syst_error_stat_up = up_shape->GetBinError(i);
+                  float syst_error_stat_dn = down_shape->GetBinError(i);
 
                   //std::cout << "per bin " << syst.name() << " " << syst_error_up << " " << syst_error_dn << std::endl;
 
@@ -438,12 +458,18 @@ namespace plotIt {
                   if (file.type == MC) {
                       (*combined_systematics_up)[i - 1] += syst_error_up;
                       (*combined_systematics_dn)[i - 1] += syst_error_dn;
+                      (*combined_systematics_stat_up)[i - 1] += syst_error_stat_up;
+                      (*combined_systematics_stat_dn)[i - 1] += syst_error_stat_dn;
 
                       if (i == (uint32_t) stack.syst_only->GetNbinsX()) {
                           float syst_error_up_over = up_shape->GetBinContent(i+1) - nominal_shape->GetBinContent(i+1);
                           float syst_error_dn_over = down_shape->GetBinContent(i+1) - nominal_shape->GetBinContent(i+1);
+                          float syst_error_stat_up_over = up_shape->GetBinError(i+1);
+                          float syst_error_stat_dn_over = down_shape->GetBinError(i+1);
                           (*combined_systematics_up)[i - 1] += syst_error_up_over;
                           (*combined_systematics_dn)[i - 1] += syst_error_dn_over;
+                          (*combined_systematics_stat_up)[i - 1] += syst_error_stat_up_over;
+                          (*combined_systematics_stat_dn)[i - 1] += syst_error_stat_dn_over;
                       }
                   }
               }
@@ -458,11 +484,21 @@ namespace plotIt {
               stack.syst_siglike_up->SetBinContent(i, total_error_up + combined_systematics_up.second[i-1]);
           }
       }
+      for (auto& combined_systematics_up: combined_systematics_siglike_stat_map_up) {
+          for (size_t i = 1; i <= (size_t) stack.syst_only->GetNbinsX(); i++) {
+              stack.syst_siglike_up->SetBinError(i, combined_systematics_up.second[i-1]);
+          }
+      }
 
       for (auto& combined_systematics_dn: combined_systematics_siglike_map_dn) {
           for (size_t i = 1; i <= (size_t) stack.syst_only->GetNbinsX(); i++) {
               float total_error_down = stack.syst_siglike_dn->GetBinContent(i);
               stack.syst_siglike_dn->SetBinContent(i, total_error_down + combined_systematics_dn.second[i-1]);
+          }
+      }
+      for (auto& combined_systematics_dn: combined_systematics_siglike_stat_map_dn) {
+          for (size_t i = 1; i <= (size_t) stack.syst_only->GetNbinsX(); i++) {
+              stack.syst_siglike_dn->SetBinError(i, combined_systematics_dn.second[i-1]);
           }
       }
       //for (size_t i = 0; i < (size_t) stack.syst_only->GetNbinsX(); i++) {
@@ -1264,12 +1300,14 @@ namespace plotIt {
               if (mc_stack.syst_siglike_up->GetBinContent(i) != 0) {
                   float syst = (mc_stack.syst_siglike_up->GetBinContent(i) + mc_stack.syst_only->GetBinContent(i)) / mc_stack.syst_only->GetBinContent(i);
                   h_syst_siglike_up->SetBinContent(i, syst);
-                  h_syst_siglike_up->SetBinError(i, 0);
+                  h_syst_siglike_up->SetBinError(i, mc_stack.syst_siglike_up->GetBinError(i) / mc_stack.syst_only->GetBinContent(i));
+                  //h_syst_siglike_up->SetBinError(i, 0);
               }
               if (mc_stack.syst_siglike_dn->GetBinContent(i) != 0) {
                   float syst = (mc_stack.syst_siglike_dn->GetBinContent(i) + mc_stack.syst_only->GetBinContent(i)) / mc_stack.syst_only->GetBinContent(i);
                   h_syst_siglike_dn->SetBinContent(i, syst);
-                  h_syst_siglike_dn->SetBinError(i, 0);
+                  h_syst_siglike_dn->SetBinError(i, mc_stack.syst_siglike_dn->GetBinError(i) / mc_stack.syst_only->GetBinContent(i));
+                  //h_syst_siglike_dn->SetBinError(i, 0);
               }
           }
         }
@@ -1296,8 +1334,8 @@ namespace plotIt {
             h_syst_siglike_dn->SetLineWidth(3);
             h_syst_siglike_up->SetLineColor(601);
             h_syst_siglike_dn->SetLineColor(633);
-            h_syst_siglike_up->Draw("same hist");
-            h_syst_siglike_dn->Draw("same hist");
+            h_syst_siglike_up->Draw("same hist e");
+            h_syst_siglike_dn->Draw("same hist e");
 
             auto syst_legend = new TLegend(0.75, 0.45, 0.95, 0.55);
             syst_legend->SetNColumns(2);
