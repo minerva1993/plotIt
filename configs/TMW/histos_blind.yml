@@ -1,0 +1,71 @@
+'ee_TwoBTag_TwoJet_mlb_minimax':
+  log-y: true
+  sort-by-yields: true
+  y-axis-format: "%1% / Bin"
+  labels:
+    - {text: 'ee', position: [0.77, .725], font: 44, size: 14}
+    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+  save-extensions: ['pdf', 'png']
+  rebin-arr: [0.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]
+  blinded-range: [0, 419]
+  #draw-siglike-unc: true
+  ratio-draw-mcstat-error: true
+  ratio-y-axis-range: [0.61, 1.39]
+
+'emu_TwoBTag_TwoJet_mlb_minimax':
+  log-y: true
+  sort-by-yields: true
+  y-axis-format: "%1% / Bin"
+  labels:
+    - {text: 'e#mu', position: [0.77, .725], font: 44, size: 14}
+    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+  save-extensions: ['pdf', 'png']
+  rebin-arr: [0.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]
+  blinded-range: [0, 419]
+  #draw-siglike-unc: true
+  ratio-draw-mcstat-error: true
+  ratio-y-axis-range: [0.61, 1.39]
+
+'mumu_TwoBTag_TwoJet_mlb_minimax':
+  log-y: true
+  sort-by-yields: true
+  y-axis-format: "%1% / Bin"
+  labels:
+    - {text: '#mu#mu', position: [0.77, .725], font: 44, size: 14}
+    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+  save-extensions: ['pdf', 'png']
+  rebin-arr: [0.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]
+  blinded-range: [0, 419]
+  #draw-siglike-unc: true
+  ratio-draw-mcstat-error: true
+  ratio-y-axis-range: [0.61, 1.39]
+
+'sameflavor_TwoBTag_TwoJet_mlb_minimax':
+  log-y: true
+  sort-by-yields: true
+  y-axis-format: "%1% / Bin"
+  labels:
+    - {text: 'ee+#mu#mu', position: [0.77, .725], font: 44, size: 14}
+    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+  save-extensions: ['pdf', 'png']
+  rebin-arr: [0.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]
+  blinded-range: [0, 419]
+  #draw-siglike-unc: true
+  ratio-draw-mcstat-error: true
+  ratio-y-axis-range: [0.61, 1.39]
+
+'combined_TwoBTag_TwoJet_mlb_minimax':
+  log-y: true
+  sort-by-yields: true
+  y-axis-format: "%1% / Bin"
+  rename:
+    - {from: 'combined_TwoBTag_TwoJet_mlb_minimax', to: 'll_TwoBTag_TwoJet_mlb_minimax'}
+  labels:
+    - {text: 'ee+e#mu+#mu#mu', position: [0.77, .725], font: 44, size: 14}
+    - {text: '#splitline{N_{b jet} = 2}{N_{jet} = 2}', position: [0.77, .65], font: 44, size: 14}
+  save-extensions: ['pdf', 'png']
+  rebin-arr: [0.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]
+  blinded-range: [0, 419]
+  #draw-siglike-unc: true
+  #ratio-draw-mcstat-error: true
+  ratio-y-axis-range: [0.61, 1.39]

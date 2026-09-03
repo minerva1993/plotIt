@@ -1,0 +1,69 @@
+'TwoJ_TwoB_postfit':
+  y-axis: "Events"
+  #y-axis-format: "%1% / %2$.2f"
+  y-axis-format: "%1% / bin"
+  sort-by-yields: true
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$Post-fit$'
+  x-axis: 'm_{lb}^{minimax} (GeV)'
+  ratio-y-axis-range: [0.89, 1.11]
+  ratio-y-axis-auto-range: true
+  post-fit: true
+  log-y: true
+  labels:
+    - {text: 'Postfit', position: [0.2, 0.80], size: 17, font: 44}
+    - {text: 'ee+#mu#mu', position: [0.2, 0.77], size: 17, font: 44}
+
+'TwoJ_TwoB_prefit':
+  y-axis: "Events"
+  #y-axis-format: "%1% / %2$.2f"
+  y-axis-format: "%1% / bin"
+  sort-by-yields: true
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$Pre-fit$'
+  x-axis: 'm_{lb}^{minimax} (GeV)'
+  ratio-y-axis-range: [0.8, 1.2]
+  ratio-y-axis-auto-range: true
+  post-fit: true
+  log-y: true
+  labels:
+    - {text: 'Prefit', position: [0.2, 0.80], size: 17, font: 44}
+    - {text: 'ee+#mu#mu', position: [0.2, 0.77], size: 17, font: 44}
+
+'GOneJ_GTwoB_postfit':
+  y-axis: "Events"
+  y-axis-format: "%1% / bin"
+  sort-by-yields: true
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$Post-fit$'
+  x-axis: ''
+  ratio-y-axis-range: [0.89, 1.11]
+  ratio-y-axis-auto-range: true
+  post-fit: true
+  log-y: true
+  labels:
+    - {text: 'Postfit', position: [0.2, 0.80], size: 17, font: 44}
+    - {text: 'ee+#mu#mu', position: [0.2, 0.77], size: 17, font: 44}
+
+'GOneJ_GTwoB_prefit':
+  y-axis: "Events"
+  y-axis-format: "%1% / bin"
+  sort-by-yields: true
+  save-extensions: ['pdf', 'png']
+  for-yields: true
+  yields-table-order: 2
+  yields-title: '$Pre-fit$'
+  x-axis: ''
+  ratio-y-axis-range: [0.75, 1.65]
+  ratio-y-axis-auto-range: true
+  post-fit: true
+  log-y: true
+  labels:
+    - {text: 'Prefit', position: [0.2, 0.80], size: 17, font: 44}
+    - {text: 'ee+#mu#mu', position: [0.2, 0.77], size: 17, font: 44}

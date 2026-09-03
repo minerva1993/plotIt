@@ -1704,7 +1704,7 @@ namespace plotIt {
         // And finally data / MC
         if (!mc_processes.empty() && has_data) {
             latexString << R"(\hline)" << std::endl;
-            latexString << R"(Data / Background prediction & & )";
+            latexString << R"(Data / Prediction & & )";
             latexString << std::setprecision(m_config.yields_table_num_prec_ratio);
 
             for (const auto& c: categories) {

@@ -26,22 +26,30 @@ histNames = [
 #Not drawing all histos! {hname: [[btag], [njet]]}
 allowed_dict = {
                  'mlb_minimax': [[], ['TwoBTag'], ['TwoJet', 'GreaterOneJet']],
-                 'mlb_minimax_lightjets': [[], ['ZeroBTag', 'ZeroOrOneBTag'], ['TwoJet']],
+                 'mlb_minimax_lightjets': [[], ['ZeroBTag', 'OneBTag', 'ZeroOrOneBTag'], ['TwoJet']],
                  'mlb_min': [[], [], ['TwoJet', 'GreaterOneJet']],
                  'mbb': [[], ['TwoBTag'], ['TwoJet', 'GreaterOneJet']],
                  'mbb_min': [[], ['GreaterTwoBTag'], ['GreaterOneJet']],
                  'drbb_min': [[], ['GreaterTwoBTag'], ['GreaterOneJet']],
+                 'nJets': [[], [], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'nBJets': [[], ['InclusiveBTag', 'GreaterOneBTag', 'GreaterTwoBTag'], []],
+                 'jet1Pt': [['combined'], ['InclusiveBTag', 'TwoBTag', 'GreaterTwoBTag'], ['GreaterOneJet', 'TwoJet']],
+                 'jet1Eta': [['combined'], ['InclusiveBTag', 'TwoBTag', 'GreaterTwoBTag'], ['GreaterOneJet', 'TwoJet']],
+                 'jet2Pt': [['combined'], ['InclusiveBTag', 'TwoBTag', 'GreaterTwoBTag'], ['GreaterOneJet', 'TwoJet']],
+                 'jet2Eta': [['combined'], ['InclusiveBTag', 'TwoBTag', 'GreaterTwoBTag'], ['GreaterOneJet', 'TwoJet']],
+                 'bJet1Pt': [['combined'], ['GreaterOneBTag', 'TwoBTag', 'GreaterTwoBTag'], []],
+                 ##
                  'nVtx': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
                  'rho': [['combined'], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
-                 'nJets': [['combined'], [], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
-                 'nBJets': [['combined'], ['InclusiveBTag', 'GreaterOneBTag'], []],
-                 'jet1Pt': [['combined'], [],['GreaterOneJet', 'TwoJet']],
-                 'jet1Eta': [['combined'], [],['GreaterOneJet', 'TwoJet']],
-                 'jet2Pt': [['combined'], [],['GreaterOneJet', 'TwoJet']],
-                 'jet2Eta': [['combined'], [],['GreaterOneJet', 'TwoJet']],
-                 'bJet1Pt': [['combined'], ['GreaterOneBTag', 'TwoBTag'],[]],
+                 'lept1Pt': [[], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'lept1Eta': [[], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'lept2Pt': [[], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'lept2Eta': [[], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'dileptonPt': [[], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
+                 'dileptonMass': [[], ['InclusiveBTag', 'TwoBTag'], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
                }
 btagNames = {'ZeroBTag': '= 0',
+             'OneBTag': '= 1',
              'InclusiveBTag': '#geq 0',
              'ZeroOrOneBTag': '= 0 or 1',
              #'GreaterZeroBTag': '#geq 1',
@@ -91,7 +99,7 @@ for hname in histNames:
                 if ch == 'combined':
                     options_list.append("  rename:\n    - {from: '" + hout + "', to: '" + hout.replace(ch, 'll') + "'}\n")
                 if 'mlb_minimax' in hname:
-                    #options_list.append('  rebin-arr: [0.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]\n')
+                    options_list.append('  rebin-arr: [0.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 220.0, 270.0, 420.0]\n')
                     options_list.append('  #draw-siglike-unc: true\n')
 
                 options_list.append("  labels:\n    - {text: '" + ch_label + "', position: [0.77, .725], font: 44, size: 14}\n")

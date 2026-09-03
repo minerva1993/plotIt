@@ -11,13 +11,29 @@
 #  yields-group: '1t#bar{t}(ll)'
 #  order: 9
 
-'ttbartwbb4linclusive.root':
+#'ttbartwbb4linclusive.root':
+#  type: mc
+#  cross-section: 1.0
+#  generated-events: 1.0
+#  group: Gttllincl
+#  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l})'
+#  order: 9
+
+'ttbartwbb4linclusive_bb4l.root':
   type: mc
   cross-section: 1.0
   generated-events: 1.0
-  group: Gttllincl
-  yields-group: '1t#bar{t}+tW(\ell\ell\textrm{ bb4l})'
+  group: Gttllinclbb4l
+  yields-group: '1bb4l'
   order: 9
+
+'ttbartwbb4linclusive_bb4lhf.root':
+  type: mc
+  cross-section: 1.0
+  generated-events: 1.0
+  group: Gttllinclbb4lhf
+  yields-group: '1bb4l+HF'
+  order: 10
 
 'ttbartwbb4linclusive_Bin0.root':
   type: mc
