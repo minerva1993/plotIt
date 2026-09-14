@@ -1297,6 +1297,9 @@ namespace plotIt {
 
           for (uint32_t i = 1; i <= (uint32_t) h_systematics->GetNbinsX(); i++) {
 
+              if (mc_stack.stat_only->GetBinContent(i) == 0 || mc_stack.stat_only->GetBinError(i) == 0)
+                continue;
+
               if (mc_stack.syst_siglike_up->GetBinContent(i) != 0) {
                   float syst = (mc_stack.syst_siglike_up->GetBinContent(i) + mc_stack.syst_only->GetBinContent(i)) / mc_stack.syst_only->GetBinContent(i);
                   h_syst_siglike_up->SetBinContent(i, syst);
