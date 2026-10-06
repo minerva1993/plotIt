@@ -112,6 +112,8 @@ namespace plotIt {
       std::vector<Plot> m_plots;
       std::vector<SystematicPtr> m_systematics;
       std::vector<SystematicPtr> m_systematics_siglike;
+      std::vector<SystematicPtr> m_systematics_mass;
+      std::vector<SystematicPtr> m_systematics_width;
       std::map<std::string, Group> m_legend_groups;
       std::map<std::string, Group> m_yields_groups;
 

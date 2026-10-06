@@ -270,6 +270,10 @@ namespace plotIt {
             result = std::make_shared<ShapeSystematic>(node);
         } else if (type == "siglike") {
             result = std::make_shared<ShapeSystematic>(node);
+        } else if (type == "mass") {
+            result = std::make_shared<ShapeSystematic>(node);
+        } else if (type == "width") {
+            result = std::make_shared<ShapeSystematic>(node);
         }
 
         if (result) {

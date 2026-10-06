@@ -14,6 +14,10 @@ namespace plotIt {
                 std::shared_ptr<TGraphAsymmErrors> stat_and_syst_asym;
                 std::shared_ptr<TH1> syst_siglike_up;
                 std::shared_ptr<TH1> syst_siglike_dn;
+                std::shared_ptr<TH1> syst_mass_up;
+                std::shared_ptr<TH1> syst_mass_dn;
+                std::shared_ptr<TH1> syst_width_up;
+                std::shared_ptr<TH1> syst_width_dn;
             };
 
             using Stacks = std::vector<std::pair<int64_t, Stack>>;

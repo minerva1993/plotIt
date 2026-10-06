@@ -140,6 +140,8 @@ namespace plotIt {
       }
 
       if (type == "siglike") m_systematics_siglike.push_back(SystematicFactory::create(name, type, configuration));
+      else if (type == "mass") m_systematics_mass.push_back(SystematicFactory::create(name, type, configuration));
+      else if (type == "width") m_systematics_width.push_back(SystematicFactory::create(name, type, configuration));
       else m_systematics.push_back(SystematicFactory::create(name, type, configuration));
   }
 
@@ -766,6 +768,9 @@ namespace plotIt {
 
       if (node["draw-siglike-unc"])
         plot.draw_siglike_unc = node["draw-siglike-unc"].as<bool>();
+
+      if (node["draw-mass-width"])
+        plot.draw_mass_width = node["draw-mass-width"].as<bool>();
 
       if (node["post-fit"])
         plot.post_fit = node["post-fit"].as<bool>();
@@ -2240,6 +2245,14 @@ namespace plotIt {
               if (std::regex_search(file.path, syst->on))
                   file.systematics_cache_siglike[plot.uid].push_back(syst->newSet(cloned_obj.get(), file, plot));
           }
+          for (auto& syst: m_systematics_mass) {
+              if (std::regex_search(file.path, syst->on))
+                  file.systematics_cache_mass[plot.uid].push_back(syst->newSet(cloned_obj.get(), file, plot));
+          }
+          for (auto& syst: m_systematics_width) {
+              if (std::regex_search(file.path, syst->on))
+                  file.systematics_cache_width[plot.uid].push_back(syst->newSet(cloned_obj.get(), file, plot));
+          }
         }
 
         continue;
@@ -2268,6 +2281,8 @@ namespace plotIt {
 
     file.systematics = & file.systematics_cache[plot.uid];
     file.systematics_siglike = & file.systematics_cache_siglike[plot.uid];
+    file.systematics_mass = & file.systematics_cache_mass[plot.uid];
+    file.systematics_width = & file.systematics_cache_width[plot.uid];
 
     return true;
   }

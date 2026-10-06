@@ -30,7 +30,7 @@ allowed_dict = {
                  'mlb_min': [[], [], ['TwoJet', 'GreaterOneJet']],
                  'mbb': [[], ['TwoBTag'], ['TwoJet', 'GreaterOneJet']],
                  'mbb_min': [[], ['GreaterTwoBTag'], ['GreaterOneJet']],
-                 'drbb_min': [[], ['GreaterTwoBTag'], ['GreaterOneJet']],
+                 'drbb_min': [[], ['TwoBTag', 'GreaterTwoBTag'], ['TwoJet', 'GreaterOneJet']],
                  'nJets': [[], [], ['TwoJet', 'InclusiveNJet', 'GreaterOneJet']],
                  'nBJets': [[], ['InclusiveBTag', 'GreaterOneBTag', 'GreaterTwoBTag'], []],
                  'jet1Pt': [['combined'], ['InclusiveBTag', 'TwoBTag', 'GreaterTwoBTag'], ['GreaterOneJet', 'TwoJet']],
@@ -58,6 +58,8 @@ btagNames = {'ZeroBTag': '= 0',
 njetNames = {'TwoJet': '= 2',
              'InclusiveNJet': '#geq 0',
              'GreaterOneJet': '#geq 2'}
+btagNames = {'GreaterTwoBTag': '#geq 3'}
+njetNames = {'GreaterOneJet': '#geq 2'}
 
 #Draw stat. unc. overlayed in the ratio pad
 stat_hists = ['mlb_minimax']
@@ -105,11 +107,14 @@ for hname in histNames:
                 options_list.append("  labels:\n    - {text: '" + ch_label + "', position: [0.77, .725], font: 44, size: 14}\n")
                 options_list.append("    - {text: '#splitline{N_{b jet} " + btag_label + "}{N_{jet} " + njet_label + "}', position: [0.77, .65], font: 44, size: 14}\n")
                 #options_list.append("  ratio-y-axis-range: [0.95, 1.05]\n")
+                options_list.append('  draw-siglike-unc: true\n')
+                options_list.append("  ratio-y-axis-range: [0.2, 1.8]\n")
 
                 options_list.append("  save-extensions: ['pdf', 'png']\n\n")
                 hist_items[hout] = options_list
 
-with open('histos_control_TwoTwo.yml', 'w') as f:
+with open('histos_control_TwoTwo_siglike_modi.yml', 'w') as f:
+#with open('histos_control_TwoTwo.yml', 'w') as f:
 #with open('histos_control_bb4l.yml', 'w') as f:
     for histo, options in hist_items.items():
         f.write("'" + histo + "':\n")

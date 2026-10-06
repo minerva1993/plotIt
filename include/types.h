@@ -155,8 +155,12 @@ namespace plotIt {
 
     std::vector<SystematicSet>* systematics;
     std::vector<SystematicSet>* systematics_siglike;
+    std::vector<SystematicSet>* systematics_mass;
+    std::vector<SystematicSet>* systematics_width;
     std::map<std::string, std::vector<SystematicSet>> systematics_cache;
     std::map<std::string, std::vector<SystematicSet>> systematics_cache_siglike;
+    std::map<std::string, std::vector<SystematicSet>> systematics_cache_mass;
+    std::map<std::string, std::vector<SystematicSet>> systematics_cache_width;
 
     int16_t order = std::numeric_limits<int16_t>::min();
 
@@ -319,6 +323,7 @@ namespace plotIt {
     bool show_ratio = true;
     bool ratio_draw_mcstat_error = false;
     bool draw_siglike_unc = false;
+    bool draw_mass_width = false;
     bool post_fit = false;
 
     bool fit = false;

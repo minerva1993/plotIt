@@ -23,7 +23,6 @@ configuration:
   #syst-only: true
 
 files: 
-  #include: ['files.yml']
   include: ['files_bb4l.yml']
 
 systematics:
@@ -145,16 +144,17 @@ systematics:
   - TRIG_MUMU2018_SYS
   - UETUNE: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
   - UNCLUSTERED2018
-  #- MASS: {type: shape, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   #- MASS: {type: siglike, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
-  #- WIDTH_30: {type: shape, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
+  #- MASS: {type: mass, on: 'ttbarsignal|ttbarbg|ttbartwbb4linclusive'}
   #- WIDTH_30: {type: siglike, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
+  #- WIDTH_30: {type: width, on: 'ttbarsignal|ttbarbg|singletw|ttbartwbb4linclusive'}
+  #- ttbartwhvq: {type: shape, on: 'ttbartwbb4linclusive_bb4lhf'}
+  #- ttbartwhvq: {type: siglike, on: 'ttbartwbb4linclusive_bb4lhf'}
 
 plots:
-  #include: ['histos_control.yml', 'histos_yield.yml']
   include: ['histos_control_TwoTwo.yml', 'histos_yield_TwoTwo.yml']
-  #include: ['histos_blind.yml']
-  #include: ['histos_blind_siglike.yml']
+  #include: ['histos_siglike.yml']
+  #include: ['histos_mass_width.yml']
 
 legend:
   #position: [0.35, 0.74, 0.94, 0.88]

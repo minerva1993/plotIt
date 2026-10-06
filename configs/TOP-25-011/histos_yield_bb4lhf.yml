@@ -52,13 +52,13 @@
   yields-table-order: 2
   yields-title: '$\mu\mu$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
 
-#'sameflavor_GreaterTwoBTag_GreaterOneJet_nBJets':
-#  y-axis-format: "Events"
-#  x-axis: ' '
-#  #for-yields: true
-#  rebin-arr: [0.0, 6.0]
-#  sort-by-yields: true
-#  labels:
-#    - {text: 'ee+#mu#mu', position: [0.77, .725], font: 44, size: 14}
-#    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
-#  save-extensions: ['pdf', 'png']
+'sameflavor_GreaterTwoBTag_GreaterOneJet_nBJets':
+  y-axis-format: "Events"
+  x-axis: ' '
+  #for-yields: true
+  rebin-arr: [0.0, 6.0]
+  sort-by-yields: true
+  labels:
+    - {text: 'ee+#mu#mu', position: [0.77, .725], font: 44, size: 14}
+    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
+  save-extensions: ['pdf', 'png']
