@@ -1,30 +1,30 @@
-'combined_GreaterTwoBTag_GreaterOneJet_nBJets':
-  y-axis-format: "Events"
-  x-axis: ' '
-  for-yields: true
-  rebin-arr: [0.0, 6.0]
-  sort-by-yields: true
-  rename:
-    - {from: 'combined_GreaterTwoBTag_GreaterOneJet_nBJets', to: 'll_GreaterTwoBTag_GreaterOneJet_nBJets'}
-  labels:
-    - {text: 'ee+e#mu+#mu#mu', position: [0.77, .725], font: 44, size: 14}
-    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
-  save-extensions: ['pdf', 'png']
-  yields-table-order: 2
-  yields-title: '$\ell\ell$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
-
-'ee_GreaterTwoBTag_GreaterOneJet_nBJets':
-  y-axis-format: "Events"
-  x-axis: ' '
-  for-yields: true
-  rebin-arr: [0.0, 6.0]
-  sort-by-yields: true
-  labels:
-    - {text: 'ee', position: [0.77, .725], font: 44, size: 14}
-    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
-  save-extensions: ['pdf', 'png']
-  yields-table-order: 2
-  yields-title: '$ee$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
+#'combined_GreaterTwoBTag_GreaterOneJet_nBJets':
+#  y-axis-format: "Events"
+#  x-axis: ' '
+#  for-yields: true
+#  rebin-arr: [0.0, 6.0]
+#  sort-by-yields: true
+#  rename:
+#    - {from: 'combined_GreaterTwoBTag_GreaterOneJet_nBJets', to: 'll_GreaterTwoBTag_GreaterOneJet_nBJets'}
+#  labels:
+#    - {text: 'ee+e#mu+#mu#mu', position: [0.77, .725], font: 44, size: 14}
+#    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
+#  save-extensions: ['pdf', 'png']
+#  yields-table-order: 2
+#  yields-title: '$\ell\ell$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
+#
+#'ee_GreaterTwoBTag_GreaterOneJet_nBJets':
+#  y-axis-format: "Events"
+#  x-axis: ' '
+#  for-yields: true
+#  rebin-arr: [0.0, 6.0]
+#  sort-by-yields: true
+#  labels:
+#    - {text: 'ee', position: [0.77, .725], font: 44, size: 14}
+#    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
+#  save-extensions: ['pdf', 'png']
+#  yields-table-order: 2
+#  yields-title: '$ee$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
 
 'emu_GreaterTwoBTag_GreaterOneJet_nBJets':
   y-axis-format: "Events"
@@ -39,18 +39,18 @@
   yields-table-order: 2
   yields-title: '$e\mu$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
 
-'mumu_GreaterTwoBTag_GreaterOneJet_nBJets':
-  y-axis-format: "Events"
-  x-axis: ' '
-  for-yields: true
-  rebin-arr: [0.0, 6.0]
-  sort-by-yields: true
-  labels:
-    - {text: '#mu#mu', position: [0.77, .725], font: 44, size: 14}
-    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
-  save-extensions: ['pdf', 'png']
-  yields-table-order: 2
-  yields-title: '$\mu\mu$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
+#'mumu_GreaterTwoBTag_GreaterOneJet_nBJets':
+#  y-axis-format: "Events"
+#  x-axis: ' '
+#  for-yields: true
+#  rebin-arr: [0.0, 6.0]
+#  sort-by-yields: true
+#  labels:
+#    - {text: '#mu#mu', position: [0.77, .725], font: 44, size: 14}
+#    - {text: 'N_{b jet} #geq 3', position: [0.77, .68], font: 44, size: 14}
+#  save-extensions: ['pdf', 'png']
+#  yields-table-order: 2
+#  yields-title: '$\mu\mu$, $\textrm{N}_{\textrm{b-jet}} \geq 3$'
 
 'sameflavor_GreaterTwoBTag_GreaterOneJet_nBJets':
   y-axis-format: "Events"

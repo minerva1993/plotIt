@@ -13,12 +13,10 @@ Gttllincl:
 
 Gttllinclbb4l:
   fill-color: '#cc0000'
-  #legend: 't#bar{t}+tW (bb4l)'
   legend: 'bb4l'
 
 Gttllinclbb4lhf:
   fill-color: '#660000'
-  #legend: 't#bar{t}+tW (bb4l)'
   legend: 'bb4l+HF'
 
 Gttllbin0:

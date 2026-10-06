@@ -1361,12 +1361,24 @@ namespace plotIt {
         if (process_name.find("$") == std::string::npos)
             replace_substr(process_name, "_", "\\_");
 
-        if (process_name.find("#") != std::string::npos) {
-            // We assume it's a ROOT LaTeX string. Enclose the string into $$, and replace
-            // '#' by '\'
+        //if (process_name.find("#") != std::string::npos) {
+        //    // We assume it's a ROOT LaTeX string. Enclose the string into $$, and replace
+        //    // '#' by '\'
 
-            replace_substr(process_name, "#", R"(\)");
-            process_name = "$" + process_name + "$";
+        //    replace_substr(process_name, "#", R"(\)");
+        //    process_name = "$" + process_name + "$";
+        //}
+        //don't mess up with ordering
+        if (process_name.find("#") != std::string::npos) {
+            // We assume it's a ROOT LaTeX string. Replace '#' by '\' and enclose into $$.
+            // If a leading sorting digit exists, keep it outside of $$ so the sort order is preserved.
+            bool has_lead_digit = !process_name.empty() &&
+                std::isdigit(static_cast<unsigned char>(process_name[0]));
+            std::string prefix = has_lead_digit ? process_name.substr(0, 1) : "";
+            std::string body   = has_lead_digit ? process_name.substr(1) : process_name;
+
+            replace_substr(body, "#", R"(\)");
+            process_name = prefix + "$" + body + "$";
         }
 
         std::pair<double, double> yield_sqerror;
